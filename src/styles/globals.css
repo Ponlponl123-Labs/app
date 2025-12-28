@@ -1,3 +1,28 @@
 @import "tailwindcss";
 @plugin "daisyui";
-@config "../../tailwind.config.js"
+@config "../../tailwind.config.js";
+
+:root {
+    --html-background: rgb(240, 242, 255);
+}
+
+html.dark:root {
+    --html-background: rgb(0,0,0); /* pure black for OLED screens for better battery life and energy efficiency */
+}
+
+body {
+    @apply bg-[var(--html-background)] text-foreground;
+    scroll-behavior: smooth;
+}
+
+body, html, nav {
+    transition: cubic-bezier(0.47, 0, 0.745, 0.715) .64s !important;
+}
+
+*:not([data-disable-default-transitions]) {
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) all .24s;
+}
+
+.heroui-ripple {
+    @apply blur-md;
+}
