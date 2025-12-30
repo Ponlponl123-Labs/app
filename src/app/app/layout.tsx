@@ -1,13 +1,10 @@
 import "@/styles/globals.css";
+import "@/styles/app.css";
 import { Metadata, Viewport } from "next";
-import clsx from "clsx";
-
-import { Providers } from "../providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
+import { Navbar } from "@/components/app/navbar";
+import Footer from "@/components/app/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -27,26 +24,18 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function PagesLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <head />
-      <body
-        className={clsx(
-          "min-h-screen text-foreground font-sans antialiased",
-          fontSans.variable
-        )}
-      >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </Providers>
-      </body>
-    </html>
+    <>
+      <div className="relative flex flex-col h-[calc(100vh-1rem)] bg-foreground/5 m-2 rounded-2xl overflow-hidden">
+        <Navbar />
+        <main className="w-full flex-grow">{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 }

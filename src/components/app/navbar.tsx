@@ -17,7 +17,12 @@ import { Button } from "@heroui/button";
 
 export const Navbar = () => {
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar
+      maxWidth="full"
+      className="bg-zinc-50 dark:bg-zinc-900"
+      height={48}
+      position="sticky"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 w-max">
           <NextLink
@@ -36,50 +41,11 @@ export const Navbar = () => {
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent justify="center">
-        <ul className="hidden md:flex gap-4 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href} data-interactive="true">
-              <NextLink
-                className="text-sm font-medium data-[active=true]:text-primary hover:font-semibold box-border p-2 hover:bg-foreground/5 active:opacity-60 rounded-lg"
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
-      </NavbarContent>
 
       <NavbarContent
         className="hidden md:flex basis-1/5 md:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden md:flex">
-          <Button
-            as={NextLink}
-            color="primary"
-            href="/app"
-            data-interactive="true"
-            size="sm"
-            variant="flat"
-          >
-            Sign In
-          </Button>
-        </NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            as={NextLink}
-            color="primary"
-            href="/app/developer"
-            data-interactive="true"
-            size="sm"
-            variant="shadow"
-          >
-            Developer Portal
-          </Button>
-        </NavbarItem>
         <NavbarItem className="hidden md:flex gap-2">
           <ThemeSwitch />
         </NavbarItem>
@@ -92,7 +58,7 @@ export const Navbar = () => {
 
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+          {/* {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 color={"foreground"}
@@ -103,7 +69,7 @@ export const Navbar = () => {
                 {item.label}
               </Link>
             </NavbarMenuItem>
-          ))}
+          ))} */}
         </div>
       </NavbarMenu>
     </HeroUINavbar>

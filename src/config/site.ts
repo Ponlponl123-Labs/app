@@ -6,54 +6,38 @@ export const siteConfig = {
     "We're trust in Open-Source, building the future of digital innovation with passion and transparency.",
   navItems: [
     {
-      label: "News",
-      href: "/news",
-    },
-    {
       label: "Docs",
       href: "/docs",
+    },
+    {
+      label: "Blog",
+      href: "/blog",
     },
     {
       label: "API Reference",
       href: "/docs/api",
     },
     {
-      label: "Issues",
-      href: "/issues",
+      label: "Sponsor",
+      href: "/#sponsor",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Docs",
+      href: "/docs",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Blog",
+      href: "/blog",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "API Reference",
+      href: "/docs/api",
     },
     {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Sponsor",
+      href: "/#sponsor",
     },
   ],
 };

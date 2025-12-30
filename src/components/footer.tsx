@@ -9,7 +9,7 @@ function Footer() {
       {/* <div className="container mx-auto max-w-4xl flex justify-center px-6 py-6">
         <SponsorBtn />
       </div> */}
-      <footer className="px-2">
+      <footer className="px-2 mt-6">
         <div className="bg-pink-100/50 dark:bg-foreground/5 rounded-3xl container flex max-md:flex-col gap-8 mx-auto max-w-4xl px-6 py-6">
           <div className="md:max-w-64 w-full flex flex-col gap-2">
             <img
@@ -27,10 +27,10 @@ function Footer() {
               Ponlponl123 Labs
             </span>
           </div>
-          <div className="w-full flex flex-row flex-wrap justify-end max-md:justify-start gap-4 py-3 max-md:pt-0">
+          <div className="w-full flex flex-row max-md:flex-wrap justify-end max-md:justify-start gap-4 py-3 max-md:pt-0">
             {[
               {
-                title: "Products",
+                title: "From Ponlponl123",
                 links: [
                   { name: "Pona!", href: "https://pona.ponlponl123.com" },
                   { name: "Fonts", href: "https://fonts.ponlponl123.com" },
@@ -59,9 +59,22 @@ function Footer() {
                   },
                 ],
               },
+              {
+                title: "Transparency",
+                links: [
+                  {
+                    name: "Privacy",
+                    href: "https://law.ponlponl123.com/labs/privacy",
+                  },
+                  {
+                    name: "Terms",
+                    href: "https://law.ponlponl123.com/labs/terms",
+                  },
+                ],
+              },
             ].map(({ title, links }) => (
               <ul
-                className="gap-1 flex flex-col sm:pr-8 md:pr-16 md:w-max max-md:w-[calc(50%-1rem)] max-[24rem]:w-full"
+                className="gap-1 flex flex-col sm:pr-8 md:pr-12 lg:pr-16 md:w-max max-md:w-[calc(50%-1rem)] max-[24rem]:w-full"
                 key={title}
               >
                 <li>
@@ -89,10 +102,20 @@ function Footer() {
             reserved.
           </span>
           <div className="flex flex-row items-center gap-4">
-            <Link color="foreground" className="opacity-30">
+            <Link
+              href="https://ponlponl123.com/discord"
+              target="_blank"
+              color="foreground"
+              className="opacity-30"
+            >
               <DiscordIcon className="w-5 h-5" />
             </Link>
-            <Link color="foreground" className="opacity-30">
+            <Link
+              href="https://github.com/Ponlponl123-Labs"
+              target="_blank"
+              color="foreground"
+              className="opacity-30"
+            >
               <GithubIcon className="w-5 h-5" />
             </Link>
           </div>
